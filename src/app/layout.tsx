@@ -8,7 +8,7 @@ const fustat = Fustat({
 });
 
 export const metadata: Metadata = {
-  title: "Tamara",
+  title: "Registration",
   description: "Registration Process",
 };
 
