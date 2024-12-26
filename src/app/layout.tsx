@@ -19,11 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${fustat.variable} font-customHelveticaNeue antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${fustat.variable} antialiased`}>{children}</body>
     </html>
   );
 }

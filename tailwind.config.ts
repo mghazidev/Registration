@@ -92,7 +92,7 @@ export default {
           900: "#8C0F4D",
           1000: "#56012B",
         },
-        grey: {
+        functional: {
           50: "#F4F6F9",
           100: "#EBEEF4",
           200: "#DAE0EB",
@@ -130,8 +130,6 @@ export default {
       },
       fontFamily: {
         customFustat: ["Fustat", "sans-serif"],
-        customHelveticaNeue: ["Helvetica Neue", "sans-serif"],
-        degularDisplay: ["Degular Display", "sans-serif"],
       },
       fontSize: {
         "heading-1": [
