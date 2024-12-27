@@ -2,6 +2,191 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .text-body-1-medium {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-body-2-medium {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-body-3-medium {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-body-1-regular {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-body-2-regular {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-body-3-regular {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-1-medium {
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-2-medium {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-3-medium {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-4-medium {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-1-regular {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-2-regular {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-3-regular {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-label-4-regular {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-link-1-regular {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+    text-decoration: underline;
+  }
+
+  .text-link-2-regular {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+    text-decoration: underline;
+  }
+
+  .text-link-3-regular {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+    text-decoration: underline;
+  }
+
+  .text-display-1 {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    letter-spacing: 1%;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-display-2 {
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 700;
+    letter-spacing: 1%;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+
+  .text-display-3 {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: 1%;
+    font-style: normal;
+    font-family: "Fustat", sans-serif;
+  }
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
