@@ -1,11 +1,10 @@
 import { TInputField } from "@/components/ui/input/TInputField";
+import { RadioButton } from "@/components/ui/radio/TRadioButton";
 
 export default function Home() {
   return (
-    <div className="w-48 m-auto prose">
-      <h2 className="h1">Heading 2</h2>
-      <p className="display-1">Medium Body Text</p>
-
+    <div className="w-48 m-auto ">
+      <RadioButton id="option1" name="example-group" label="Yes" />
       <TInputField className="border p-2 rounded-md" />
     </div>
   );

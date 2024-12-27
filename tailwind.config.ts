@@ -19,7 +19,7 @@ export default {
           white: "#FFFFFF",
         },
         brand: {
-          50: "#FBF3FF",
+          50: "#5d00ba",
           100: "#F5E3FF",
           200: "#ECCDFF",
           400: "#DEA5FF",
@@ -97,7 +97,7 @@ export default {
         },
         functional: {
           50: "#F4F6F9",
-          100: "#EBEEF4",
+          100: "#212442",
           200: "#DAE0EB",
           300: "#C3CBDE",
           400: "#ABB2CE",
