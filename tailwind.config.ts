@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+const plugin = require("tailwindcss/plugin");
+const typographyPlugin = require("@tailwindcss/typography");
 
 export default {
   content: [
@@ -107,7 +109,7 @@ export default {
         },
       },
       borderRadius: {
-        xxs: "4px",
+        xs: "4px",
         s: "8px",
         m: "12px",
         l: "16px",
@@ -116,153 +118,467 @@ export default {
         max: "1000px",
       },
       spacing: {
-        "size-0": "0px",
-        "size-2": "4px",
-        "size-3": "8px",
-        "size-4": "12px",
-        "size-5": "16px",
-        "size-6": "20px",
-        "size-7": "24px",
-        "size-8": "32px",
-        "size-9": "40px",
-        "size-10": "48px",
-        "size-11": "56px",
+        0: "0px",
+        2: "4px",
+        3: "8px",
+        4: "12px",
+        5: "16px",
+        6: "20px",
+        7: "24px",
+        8: "32px",
+        9: "40px",
+        10: "48px",
+        11: "56px",
       },
       fontFamily: {
         customFustat: ["Fustat", "sans-serif"],
       },
-      fontSize: {
-        "heading-1": [
-          "28px",
-          { lineHeight: "36px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-2": [
-          "24px",
-          { lineHeight: "32px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-3": [
-          "20px",
-          { lineHeight: "28px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-4": [
-          "18px",
-          { lineHeight: "24px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-5": [
-          "16px",
-          { lineHeight: "22px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-6": [
-          "14px",
-          { lineHeight: "20px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-7": [
-          "12px",
-          { lineHeight: "18px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        "heading-8": [
-          "10px",
-          { lineHeight: "14px", fontWeight: "800", letterSpacing: "0em" },
-        ],
-        //Body Variants Start
-        "body-1-medium": [
-          "16px",
-          { lineHeight: "24px", fontWeight: "700", letterSpacing: "0em" },
-        ],
-        "body-2-medium": [
-          "14px",
-          { lineHeight: "22px", fontWeight: "700", letterSpacing: "0em" },
-        ],
-        "body-3-medium": [
-          "12px",
-          { lineHeight: "18px", fontWeight: "700", letterSpacing: "0em" },
-        ],
 
-        "body-1-regular": [
-          "16px",
-          { lineHeight: "24px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "body-2-regular": [
-          "14px",
-          { lineHeight: "22px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "body-3-regular": [
-          "12px",
-          { lineHeight: "18px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        //Body Variants End
-
-        //Label Variant Start
-
-        "label-1-medium": [
-          "28px",
-          { lineHeight: "28px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "label-2-medium": [
-          "16px",
-          { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "label-3-medium": [
-          "14px",
-          { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "label-4-medium": [
-          "12px",
-          { lineHeight: "16px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-
-        "label-1-regular": [
-          "28px",
-          { lineHeight: "36px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "label-2-regular": [
-          "16px",
-          { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "label-3-regular": [
-          "14px",
-          { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "label-4-regular": [
-          "12px",
-          { lineHeight: "16px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        //Label Variant End
-
-        //Link Variant Start
-        "link-1-regular": [
-          "16px",
-          { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "link-2-regular": [
-          "14px",
-          { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        "link-3-regular": [
-          "12px",
-          { lineHeight: "16px", fontWeight: "500", letterSpacing: "0em" },
-        ],
-        //Link Variant End
-
-        //Display Typography Start
-        "display-1": [
-          "48px",
-          { lineHeight: "52px", fontWeight: "700", letterSpacing: "1%" },
-        ],
-        "display-2": [
-          "40px",
-          { lineHeight: "44px", fontWeight: "700", letterSpacing: "1%" },
-        ],
-        "display-3": [
-          "36px",
-          { lineHeight: "40px", fontWeight: "700", letterSpacing: "1%" },
-        ],
-        //Display Typography End
-      },
       textDecoration: {
         underline: "underline",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontSize: "28px",
+              lineHeight: "36px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h2: {
+              fontSize: "24px",
+              lineHeight: "32px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h3: {
+              fontSize: "20px",
+              lineHeight: "28px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h4: {
+              fontSize: "18px",
+              lineHeight: "24px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h5: {
+              fontSize: "16px",
+              lineHeight: "22px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h6: {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h7: {
+              fontSize: "12px",
+              lineHeight: "18px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            h8: {
+              fontSize: "10px",
+              lineHeight: "14px",
+              fontWeight: "800",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+
+            // Body Variants
+            p: {
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-1-medium": {
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: "700",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              letterSpacing: "0em",
+            },
+            ".body-2-medium": {
+              fontSize: "14px",
+              lineHeight: "22px",
+              fontWeight: "700",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-3-medium": {
+              fontSize: "12px",
+              lineHeight: "18px",
+              fontWeight: "700",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-1-regular": {
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-2-regular": {
+              fontSize: "14px",
+              lineHeight: "22px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-3-regular": {
+              fontSize: "12px",
+              lineHeight: "18px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+
+            // Label Variants
+            ".label-1-medium": {
+              fontSize: "28px",
+              lineHeight: "28px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-2-medium": {
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-3-medium": {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-4-medium": {
+              fontSize: "12px",
+              lineHeight: "16px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-1-regular": {
+              fontSize: "28px",
+              lineHeight: "36px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-2-regular": {
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-3-regular": {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-4-regular": {
+              fontSize: "12px",
+              lineHeight: "16px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+
+            // Link Variants
+            ".link-1-regular": {
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              textDecoration: "underline",
+            },
+            ".link-2-regular": {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              textDecoration: "underline",
+            },
+            ".link-3-regular": {
+              fontSize: "12px",
+              lineHeight: "16px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              textDecoration: "underline",
+            },
+
+            // Display Typography
+            ".display-1": {
+              fontSize: "48px",
+              lineHeight: "52px",
+              fontWeight: "700",
+              letterSpacing: "1%",
+              fontStyle: "normal",
+            },
+            ".display-2": {
+              fontSize: "40px",
+              lineHeight: "44px",
+              fontWeight: "700",
+              letterSpacing: "1%",
+              fontStyle: "normal",
+            },
+            ".display-3": {
+              fontSize: "36px",
+              lineHeight: "40px",
+              fontWeight: "700",
+              letterSpacing: "1%",
+              fontStyle: "normal",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    typographyPlugin,
+    plugin(function ({ addComponents }: any) {
+      addComponents({
+        ".prose .label-1-medium": {
+          "@apply text-label-1-medium": "",
+        },
+        ".prose .label-2-medium": {
+          "@apply text-label-2-medium": "",
+        },
+        ".prose .label-3-medium": {
+          "@apply text-label-3-medium": "",
+        },
+        ".prose .label-4-medium": {
+          "@apply text-label-4-medium": "",
+        },
+        ".prose .label-1-regular": {
+          "@apply text-label-1-regular": "",
+        },
+        ".prose .label-2-regular": {
+          "@apply text-label-2-regular": "",
+        },
+        ".prose .label-3-regular": {
+          "@apply text-label-3-regular": "",
+        },
+        ".prose .label-4-regular": {
+          "@apply text-label-4-regular": "",
+        },
+        ".prose .link-1-regular": {
+          "@apply text-link-1-regular": "",
+        },
+        ".prose .link-2-regular": {
+          "@apply text-link-2-regular": "",
+        },
+        ".prose .link-3-regular": {
+          "@apply text-link-3-regular": "",
+        },
+        ".prose .body-1-medium": {
+          "@apply text-body-1-medium": "",
+        },
+        ".prose .body-2-medium": {
+          "@apply text-body-2-medium": "",
+        },
+        ".prose .body-3-medium": {
+          "@apply text-body-3-medium": "",
+        },
+        ".prose .body-1-regular": {
+          "@apply text-body-1-regular": "",
+        },
+        ".prose .body-2-regular": {
+          "@apply text-body-2-regular": "",
+        },
+        ".prose .body-3-regular": {
+          "@apply text-body-3-regular": "",
+        },
+        ".prose .display-1": {
+          "@apply text-display-1": "",
+        },
+        ".prose .display-2": {
+          "@apply text-display-2": "",
+        },
+        ".prose .display-3": {
+          "@apply text-display-3": "",
+        },
+      });
+    }),
+  ],
 } satisfies Config;
+
+// fontSize: {
+//   "heading-1": [
+//     "28px",
+//     { lineHeight: "36px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-2": [
+//     "24px",
+//     { lineHeight: "32px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-3": [
+//     "20px",
+//     { lineHeight: "28px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-4": [
+//     "18px",
+//     { lineHeight: "24px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-5": [
+//     "16px",
+//     { lineHeight: "22px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-6": [
+//     "14px",
+//     { lineHeight: "20px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-7": [
+//     "12px",
+//     { lineHeight: "18px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   "heading-8": [
+//     "10px",
+//     { lineHeight: "14px", fontWeight: "800", letterSpacing: "0em" },
+//   ],
+//   //Body Variants Start
+//   "body-1-medium": [
+//     "16px",
+//     { lineHeight: "24px", fontWeight: "700", letterSpacing: "0em" },
+//   ],
+//   "body-2-medium": [
+//     "14px",
+//     { lineHeight: "22px", fontWeight: "700", letterSpacing: "0em" },
+//   ],
+//   "body-3-medium": [
+//     "12px",
+//     { lineHeight: "18px", fontWeight: "700", letterSpacing: "0em" },
+//   ],
+
+//   "body-1-regular": [
+//     "16px",
+//     { lineHeight: "24px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "body-2-regular": [
+//     "14px",
+//     { lineHeight: "22px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "body-3-regular": [
+//     "12px",
+//     { lineHeight: "18px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   //Body Variants End
+
+//   //Label Variant Start
+
+//   "label-1-medium": [
+//     "28px",
+//     { lineHeight: "28px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "label-2-medium": [
+//     "16px",
+//     { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "label-3-medium": [
+//     "14px",
+//     { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "label-4-medium": [
+//     "12px",
+//     { lineHeight: "16px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+
+//   "label-1-regular": [
+//     "28px",
+//     { lineHeight: "36px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "label-2-regular": [
+//     "16px",
+//     { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "label-3-regular": [
+//     "14px",
+//     { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "label-4-regular": [
+//     "12px",
+//     { lineHeight: "16px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   //Label Variant End
+
+//   //Link Variant Start
+//   "link-1-regular": [
+//     "16px",
+//     { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "link-2-regular": [
+//     "14px",
+//     { lineHeight: "20px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   "link-3-regular": [
+//     "12px",
+//     { lineHeight: "16px", fontWeight: "500", letterSpacing: "0em" },
+//   ],
+//   //Link Variant End
+
+//   //Display Typography Start
+//   "display-1": [
+//     "48px",
+//     { lineHeight: "52px", fontWeight: "700", letterSpacing: "1%" },
+//   ],
+//   "display-2": [
+//     "40px",
+//     { lineHeight: "44px", fontWeight: "700", letterSpacing: "1%" },
+//   ],
+//   "display-3": [
+//     "36px",
+//     { lineHeight: "40px", fontWeight: "700", letterSpacing: "1%" },
+//   ],
+//   //Display Typography End
+// },
