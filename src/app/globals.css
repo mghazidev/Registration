@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
+@layer components {
   /* Add your custom component styles here */
-/* .text-body-1-medium {
+  .text-body-1-medium {
     font-size: 16px;
     line-height: 24px;
     font-weight: 700;
@@ -186,7 +186,7 @@
     font-style: normal;
     font-family: "Fustat", sans-serif;
   }
-} */
+}
 
 /* :root {
   --background: #ffffff;

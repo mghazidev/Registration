@@ -197,289 +197,290 @@ export default {
               fontStyle: "normal",
               fontFamily: "'Fustat', sans-serif",
             },
+            ".body-1-medium": {
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: "700",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              letterSpacing: "0em",
+            },
+            ".body-2-medium": {
+              fontSize: "14px",
+              lineHeight: "22px",
+              fontWeight: "700",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-3-medium": {
+              fontSize: "12px",
+              lineHeight: "18px",
+              fontWeight: "700",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-1-regular": {
+              fontSize: "16px",
+              lineHeight: "24px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-2-regular": {
+              fontSize: "14px",
+              lineHeight: "22px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".body-3-regular": {
+              fontSize: "12px",
+              lineHeight: "18px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+
+            // Label Variants
+            ".label-1-medium": {
+              fontSize: "28px",
+              lineHeight: "28px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-2-medium": {
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-3-medium": {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-4-medium": {
+              fontSize: "12px",
+              lineHeight: "16px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-1-regular": {
+              fontSize: "28px",
+              lineHeight: "36px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-2-regular": {
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-3-regular": {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+            ".label-4-regular": {
+              fontSize: "12px",
+              lineHeight: "16px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+            },
+
+            // Link Variants
+            ".link-1-regular": {
+              fontSize: "16px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              textDecoration: "underline",
+            },
+            ".link-2-regular": {
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              textDecoration: "underline",
+            },
+            ".link-3-regular": {
+              fontSize: "12px",
+              lineHeight: "16px",
+              fontWeight: "500",
+              letterSpacing: "0em",
+              fontStyle: "normal",
+              fontFamily: "'Fustat', sans-serif",
+              textDecoration: "underline",
+            },
+
+            // Display Typography
+            ".display-1": {
+              fontSize: "48px",
+              lineHeight: "52px",
+              fontWeight: "700",
+              letterSpacing: "1%",
+              fontStyle: "normal",
+            },
+            ".display-2": {
+              fontSize: "40px",
+              lineHeight: "44px",
+              fontWeight: "700",
+              letterSpacing: "1%",
+              fontStyle: "normal",
+            },
+            ".display-3": {
+              fontSize: "36px",
+              lineHeight: "40px",
+              fontWeight: "700",
+              letterSpacing: "1%",
+              fontStyle: "normal",
+            },
           },
         },
       },
-      fontSize: {
-        10: "10px",
-        12: "12px",
-        14: "14px",
-        16: "16px",
-        18: "18px",
-        20: "20px",
-        22: "22px",
-        24: "24px",
-        28: "28px",
-        32: "32px",
-        36: "36px",
-        40: "40px",
-        48: "48px",
-      },
-      lineHeight: {
-        10: "10px",
-        12: "12px",
-        14: "14px",
-        16: "16px",
-        18: "18px",
-        20: "20px",
-        22: "22px",
-        24: "24px",
-        28: "28px",
-        32: "32px",
-        36: "36px",
-        40: "40px",
-        48: "48px",
-      },
-      fontWeight: {
-        thin: "100",
-        extralight: "200",
-        light: "300",
-        normal: "400",
-        medium: "500",
-        semibold: "600",
-        bold: "700",
-        extrabold: "800",
-        black: "900",
-      },
-      letterSpacing: {
-        normal: "0em",
-        wide: "0.2em",
-      },
     },
   },
-  plugins: [typographyPlugin],
+  plugins: [
+    typographyPlugin,
+    plugin(function ({ addComponents }: any) {
+      addComponents({
+        ".prose .label-1-medium": {
+          "@apply text-label-1-medium": "",
+        },
+        ".prose .label-2-medium": {
+          "@apply text-label-2-medium": "",
+        },
+        ".prose .label-3-medium": {
+          "@apply text-label-3-medium": "",
+        },
+        ".prose .label-4-medium": {
+          "@apply text-label-4-medium": "",
+        },
+        ".prose .label-1-regular": {
+          "@apply text-label-1-regular": "",
+        },
+        ".prose .label-2-regular": {
+          "@apply text-label-2-regular": "",
+        },
+        ".prose .label-3-regular": {
+          "@apply text-label-3-regular": "",
+        },
+        ".prose .label-4-regular": {
+          "@apply text-label-4-regular": "",
+        },
+        ".prose .link-1-regular": {
+          "@apply text-link-1-regular": "",
+        },
+        ".prose .link-2-regular": {
+          "@apply text-link-2-regular": "",
+        },
+        ".prose .link-3-regular": {
+          "@apply text-link-3-regular": "",
+        },
+        ".prose .body-1-medium": {
+          "@apply text-body-1-medium": "",
+        },
+        ".prose .body-2-medium": {
+          "@apply text-body-2-medium": "",
+        },
+        ".prose .body-3-medium": {
+          "@apply text-body-3-medium": "",
+        },
+        ".prose .body-1-regular": {
+          "@apply text-body-1-regular": "",
+        },
+        ".prose .body-2-regular": {
+          "@apply text-body-2-regular": "",
+        },
+        ".prose .body-3-regular": {
+          "@apply text-body-3-regular": "",
+        },
+        ".prose .display-1": {
+          "@apply text-display-1": "",
+        },
+        ".prose .display-2": {
+          "@apply text-display-2": "",
+        },
+        ".prose .display-3": {
+          "@apply text-display-3": "",
+        },
+      });
+    }),
+  ],
 } satisfies Config;
 
-// plugin(function ({ addComponents }: any) {
-//   addComponents({
-//     ".prose .label-1-medium": {
-//       "@apply text-label-1-medium": "",
-//     },
-//     ".prose .label-2-medium": {
-//       "@apply text-label-2-medium": "",
-//     },
-//     ".prose .label-3-medium": {
-//       "@apply text-label-3-medium": "",
-//     },
-//     ".prose .label-4-medium": {
-//       "@apply text-label-4-medium": "",
-//     },
-//     ".prose .label-1-regular": {
-//       "@apply text-label-1-regular": "",
-//     },
-//     ".prose .label-2-regular": {
-//       "@apply text-label-2-regular": "",
-//     },
-//     ".prose .label-3-regular": {
-//       "@apply text-label-3-regular": "",
-//     },
-//     ".prose .label-4-regular": {
-//       "@apply text-label-4-regular": "",
-//     },
-//     ".prose .link-1-regular": {
-//       "@apply text-link-1-regular": "",
-//     },
-//     ".prose .link-2-regular": {
-//       "@apply text-link-2-regular": "",
-//     },
-//     ".prose .link-3-regular": {
-//       "@apply text-link-3-regular": "",
-//     },
-//     ".prose .body-1-medium": {
-//       "@apply text-body-1-medium": "",
-//     },
-//     ".prose .body-2-medium": {
-//       "@apply text-body-2-medium": "",
-//     },
-//     ".prose .body-3-medium": {
-//       "@apply text-body-3-medium": "",
-//     },
-//     ".prose .body-1-regular": {
-//       "@apply text-body-1-regular": "",
-//     },
-//     ".prose .body-2-regular": {
-//       "@apply text-body-2-regular": "",
-//     },
-//     ".prose .body-3-regular": {
-//       "@apply text-body-3-regular": "",
-//     },
-//     ".prose .display-1": {
-//       "@apply text-display-1": "",
-//     },
-//     ".prose .display-2": {
-//       "@apply text-display-2": "",
-//     },
-//     ".prose .display-3": {
-//       "@apply text-display-3": "",
-//     },
-//   });
-// }),
-
-// ".body-1-medium": {
-//   fontSize: "16px",
-//   lineHeight: "24px",
-//   fontWeight: "700",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-//   letterSpacing: "0em",
+// fontSize: {
+//   10: "10px",
+//   12: "12px",
+//   14: "14px",
+//   16: "16px",
+//   18: "18px",
+//   20: "20px",
+//   22: "22px",
+//   24: "24px",
+//   28: "28px",
+//   32: "32px",
+//   36: "36px",
+//   40: "40px",
+//   48: "48px",
 // },
-// ".body-2-medium": {
-//   fontSize: "14px",
-//   lineHeight: "22px",
-//   fontWeight: "700",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
+// lineHeight: {
+//   10: "10px",
+//   12: "12px",
+//   14: "14px",
+//   16: "16px",
+//   18: "18px",
+//   20: "20px",
+//   22: "22px",
+//   24: "24px",
+//   28: "28px",
+//   32: "32px",
+//   36: "36px",
+//   40: "40px",
+//   48: "48px",
 // },
-// ".body-3-medium": {
-//   fontSize: "12px",
-//   lineHeight: "18px",
-//   fontWeight: "700",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
+// fontWeight: {
+//   thin: "100",
+//   extralight: "200",
+//   light: "300",
+//   normal: "400",
+//   medium: "500",
+//   semibold: "600",
+//   bold: "700",
+//   extrabold: "800",
+//   black: "900",
 // },
-// ".body-1-regular": {
-//   fontSize: "16px",
-//   lineHeight: "24px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".body-2-regular": {
-//   fontSize: "14px",
-//   lineHeight: "22px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".body-3-regular": {
-//   fontSize: "12px",
-//   lineHeight: "18px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-
-// // Label Variants
-// ".label-1-medium": {
-//   fontSize: "28px",
-//   lineHeight: "28px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-2-medium": {
-//   fontSize: "16px",
-//   lineHeight: "20px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-3-medium": {
-//   fontSize: "14px",
-//   lineHeight: "20px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-4-medium": {
-//   fontSize: "12px",
-//   lineHeight: "16px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-1-regular": {
-//   fontSize: "28px",
-//   lineHeight: "36px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-2-regular": {
-//   fontSize: "16px",
-//   lineHeight: "20px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-3-regular": {
-//   fontSize: "14px",
-//   lineHeight: "20px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-// ".label-4-regular": {
-//   fontSize: "12px",
-//   lineHeight: "16px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-// },
-
-// // Link Variants
-// ".link-1-regular": {
-//   fontSize: "16px",
-//   lineHeight: "20px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-//   textDecoration: "underline",
-// },
-// ".link-2-regular": {
-//   fontSize: "14px",
-//   lineHeight: "20px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-//   textDecoration: "underline",
-// },
-// ".link-3-regular": {
-//   fontSize: "12px",
-//   lineHeight: "16px",
-//   fontWeight: "500",
-//   letterSpacing: "0em",
-//   fontStyle: "normal",
-//   fontFamily: "'Fustat', sans-serif",
-//   textDecoration: "underline",
-// },
-
-// // Display Typography
-// ".display-1": {
-//   fontSize: "48px",
-//   lineHeight: "52px",
-//   fontWeight: "700",
-//   letterSpacing: "1%",
-//   fontStyle: "normal",
-// },
-// ".display-2": {
-//   fontSize: "40px",
-//   lineHeight: "44px",
-//   fontWeight: "700",
-//   letterSpacing: "1%",
-//   fontStyle: "normal",
-// },
-// ".display-3": {
-//   fontSize: "36px",
-//   lineHeight: "40px",
-//   fontWeight: "700",
-//   letterSpacing: "1%",
-//   fontStyle: "normal",
+// letterSpacing: {
+//   normal: "0em",
+//   wide: "0.2em",
 // },
 
 // h7: {
