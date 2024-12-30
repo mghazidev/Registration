@@ -23,7 +23,6 @@ export default function Home() {
       <RadioCard
         id="option1"
         label="Option 1"
-        description="hehehrehie"
         value="option1"
         checked={selected === "option1"}
         onChange={handleChange}

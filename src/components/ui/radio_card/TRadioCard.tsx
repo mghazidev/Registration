@@ -26,9 +26,9 @@ const RadioCard: React.FC<RadioCardProps> = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-between border rounded-m p-4 px-6 gap-4 cursor-pointer my-5",
+        "flex items-center justify-between border rounded-m p-4 px-6 gap-4 cursor-pointer my-5 bg-primary-white",
         checked
-          ? "border-brand-50 border-2"
+          ? "border-brand-50 border-2 bg-brand-100"
           : error
           ? "border-red-800 border-2"
           : "border-functional-500",
