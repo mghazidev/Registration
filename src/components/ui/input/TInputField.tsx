@@ -14,7 +14,7 @@ const TInputField = React.forwardRef<
       <input
         type={type}
         className={cn(
-          "flex w-[100%] font-customFustat bg-primary-white body-1-medium h-11 rounded-m border  px-5 py-6 text-functional-100 shadow-sm transition-colors placeholder:text-functional-500 focus-visible:border-none focus-visible:outline-none focus-visible:ring-2  disabled:cursor-not-allowed disabled:opacity-50 ",
+          "flex w-[100%] my-4 font-customFustat bg-primary-white body-1-medium h-11 rounded-m border  px-5 py-6 text-functional-100 shadow-sm transition-colors placeholder:text-functional-500 focus-visible:border-none focus-visible:outline-none focus-visible:ring-2  disabled:cursor-not-allowed disabled:opacity-50 ",
           error
             ? "border-red-800 focus-visible:ring-red-800"
             : "border-functional-500 focus-visible:ring-brand-50",

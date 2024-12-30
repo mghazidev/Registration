@@ -8,6 +8,8 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/modules/authentication/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -20,7 +22,7 @@ export default {
         },
         brand: {
           50: "#5d00ba",
-          100: "#F5E3FF",
+          100: "#FBF3FF",
           200: "#ECCDFF",
           400: "#DEA5FF",
           500: "#C96CFF",
@@ -110,7 +112,7 @@ export default {
         },
       },
       boxShadow: {
-        custom: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)",
+        custom: "0 6px 12px rgba(0, 0, 0, 0.1), 0 3px 8px rgba(0, 0, 0, 0.06)",
       },
       borderRadius: {
         xs: "4px",
@@ -334,6 +336,48 @@ export default {
           fontSize: fontSize["label-2-medium"][0],
           lineHeight: fontSize["label-2-medium"][1].lineHeight,
           letterSpacing: fontSize["label-2-medium"][1].letterSpacing,
+          fontWeight: fontWeight.medium,
+        },
+        ".label-3-medium": {
+          fontFamily: fontFamily,
+          fontSize: fontSize["label-3-medium"][0],
+          lineHeight: fontSize["label-3-medium"][1].lineHeight,
+          letterSpacing: fontSize["label-3-medium"][1].letterSpacing,
+          fontWeight: fontWeight.medium,
+        },
+        ".label-4-medium": {
+          fontFamily: fontFamily,
+          fontSize: fontSize["label-4-medium"][0],
+          lineHeight: fontSize["label-4-medium"][1].lineHeight,
+          letterSpacing: fontSize["label-4-medium"][1].letterSpacing,
+          fontWeight: fontWeight.medium,
+        },
+        ".label-1-regular": {
+          fontFamily: fontFamily,
+          fontSize: fontSize["label-1-regular"][0],
+          lineHeight: fontSize["label-1-regular"][1].lineHeight,
+          letterSpacing: fontSize["label-1-regular"][1].letterSpacing,
+          fontWeight: fontWeight.medium,
+        },
+        ".label-2-regular": {
+          fontFamily: fontFamily,
+          fontSize: fontSize["label-2-regular"][0],
+          lineHeight: fontSize["label-2-regular"][1].lineHeight,
+          letterSpacing: fontSize["label-2-regular"][1].letterSpacing,
+          fontWeight: fontWeight.medium,
+        },
+        ".label-3-regular": {
+          fontFamily: fontFamily,
+          fontSize: fontSize["label-3-regular"][0],
+          lineHeight: fontSize["label-3-regular"][1].lineHeight,
+          letterSpacing: fontSize["label-3-regular"][1].letterSpacing,
+          fontWeight: fontWeight.medium,
+        },
+        ".label-4-regular": {
+          fontFamily: fontFamily,
+          fontSize: fontSize["label-4-regular"][0],
+          lineHeight: fontSize["label-4-regular"][1].lineHeight,
+          letterSpacing: fontSize["label-4-regular"][1].letterSpacing,
           fontWeight: fontWeight.medium,
         },
         ".link-1-regular": {
