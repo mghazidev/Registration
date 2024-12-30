@@ -28,9 +28,9 @@ const RadioCard: React.FC<RadioCardProps> = ({
       className={cn(
         "flex items-center justify-between border rounded-m p-4 px-6 gap-4 cursor-pointer my-5 bg-primary-white",
         checked
-          ? "border-brand-50 border-2 bg-brand-100"
+          ? "border-brand-50 "
           : error
-          ? "border-red-800 border-2"
+          ? "border-red-800 "
           : "border-functional-500",
         disabled && "cursor-not-allowed opacity-50"
       )}
