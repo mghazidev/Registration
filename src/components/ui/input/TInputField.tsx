@@ -10,7 +10,7 @@ const TInputField = React.forwardRef<
     <input
       type={type}
       className={cn(
-        "flex w-full font-customFustat body-1-medium h-11 rounded-m border border-functional-500 bg-transparent px-5 py-6 text-functional-1000 shadow-sm transition-colors placeholder:text-functional-500 focus-visible:border-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-50 disabled:cursor-not-allowed disabled:opacity-50 ",
+        "flex w-full font-customFustat bg-primary-white body-1-medium h-11 rounded-m border border-functional-500 px-5 py-6 text-functional-1000 shadow-sm transition-colors placeholder:text-functional-500 focus-visible:border-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-50 disabled:cursor-not-allowed disabled:opacity-50 ",
         className
       )}
       ref={ref}

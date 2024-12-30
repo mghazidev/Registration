@@ -10,17 +10,64 @@ import {
   SelectValue,
 } from "@/components/ui/select/TSelect";
 import { RadioCard } from "@/components/ui/radio_card/TRadioCard";
-
+import { usePhoneNumberFormat } from "@/modules/authentication/hooks/usePhoneNumberFormat";
+import { VerificationInputField } from "@/components/ui/input/TVerificationInputField";
 export default function Home() {
-  const [selected, setSelected] = React.useState<string>("option1");
+  // const [selected, setSelected] = React.useState<string>("option1");
 
-  const handleChange = (value: string) => {
-    setSelected(value);
+  // const handleChange = (value: string) => {
+  //   setSelected(value);
+  // };
+
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [verificationStatus, setVerificationStatus] = React.useState<
+    "verified" | "not_verified" | "loading" | "idle"
+  >("idle");
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const handleVerifyClick = () => {
+    setIsModalOpen(true);
   };
+
+  const verifyPhoneNumber = (phone: string) => {
+    setVerificationStatus("loading");
+    setTimeout(() => {
+      if (phone === "1234567890") {
+        setVerificationStatus("verified");
+      } else {
+        setVerificationStatus("not_verified");
+      }
+    }, 2000);
+  };
+
+  React.useEffect(() => {
+    if (phoneNumber.length > 0) {
+      setVerificationStatus("loading");
+      verifyPhoneNumber(phoneNumber);
+    } else {
+      setVerificationStatus("idle");
+    }
+  }, [phoneNumber]);
+
   return (
-    <div className="w-[60%] m-auto ">
-      <RadioButton id="option1" name="example-group" label="Yes" />
-      <RadioCard
+    <div className="w-[60%] m-auto my-4">
+      <VerificationInputField
+        id="phoneNumber"
+        value={phoneNumber}
+        onChange={setPhoneNumber}
+        verificationStatus={verificationStatus}
+        onVerifyClick={handleVerifyClick}
+        error={verificationStatus === "not_verified"}
+      />
+
+      {/* Modal for verification */}
+      {isModalOpen && (
+        <>
+          <div>Modal content here</div>
+        </>
+      )}
+      {/* <RadioButton id="option1" name="example-group" label="Yes" /> */}
+      {/* <RadioCard
         id="option1"
         label="Option 1"
         value="option1"
@@ -41,7 +88,7 @@ export default function Home() {
         checked={selected === "option3"}
         onChange={handleChange}
         disabled
-      />
+      /> */}
       {/* <Select>
         <SelectTrigger className="w-[180px] my-4">
           <SelectValue
