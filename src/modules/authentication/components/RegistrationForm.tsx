@@ -1,12 +1,22 @@
 "use client";
 import React from "react";
-import { Button } from "@/components/ui/button/TButton";
-import { TInputField } from "@/components/ui/input/TInputField";
-import { Label } from "@/components/ui/Label/TLabel";
+import { Button } from "@/components/ui/TButton";
+import { TInputField } from "@/components/ui/form/input/TInputField";
+import { Label } from "@/components/ui/TLabel";
 import { motion, AnimatePresence } from "framer-motion";
+import PhoneInput from "@/components/ui/form/input/PhoneInput";
+import { PhoneInputValue } from "../types/phoneInput";
+
 const RegistrationForm = () => {
   const [isEmail, setIsEmail] = React.useState(true);
+  const [mobileValue, setMobileValue] = React.useState<PhoneInputValue>({
+    countryCode: "+1",
+    phoneNumber: "",
+  });
 
+  const handleMobileChange = (newValue: PhoneInputValue) => {
+    setMobileValue(newValue);
+  };
   return (
     <div className="flex flex-col items-center justify-center w-full gap-4">
       <div className="bg-primary-white py-10 w-[500px] m-auto p-10 shadow-custom rounded-xl">
@@ -62,7 +72,7 @@ const RegistrationForm = () => {
               transition={{ duration: 0.3 }}
             >
               <Label htmlFor="mobile">Mobile number</Label>
-              <TInputField id="mobile" type="tel" placeholder="123-456-7890" />
+              <PhoneInput value={mobileValue} onChange={handleMobileChange} />
             </motion.div>
           )}
         </AnimatePresence>

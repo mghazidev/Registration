@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fustat } from "next/font/google";
 import "./globals.css";
-
+import ReactQueryProvider from "./QueryProvider";
 const fustat = Fustat({
   variable: "--font-fustat",
   subsets: ["latin"],
@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fustat.variable} antialiased`}>{children}</body>
+      <body className={`${fustat.variable} antialiased`}>
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }

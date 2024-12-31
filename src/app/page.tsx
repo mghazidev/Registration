@@ -1,17 +1,17 @@
 "use client";
 
 import * as React from "react";
-import { RadioButton } from "@/components/ui/radio/TRadioButton";
+import { RadioButton } from "@/components/ui/TRadioButton";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select/TSelect";
-import { RadioCard } from "@/components/ui/radio_card/TRadioCard";
+} from "@/components/ui/form/select/TSelect";
+import { RadioCard } from "@/components/ui/TRadioCard";
 import { usePhoneNumberFormat } from "@/modules/authentication/hooks/usePhoneNumberFormat";
-import { VerificationInputField } from "@/components/ui/input/TVerificationInputField";
+import { VerificationInputField } from "@/components/ui/form/input/TVerificationInputField";
 export default function Home() {
   // const [selected, setSelected] = React.useState<string>("option1");
 

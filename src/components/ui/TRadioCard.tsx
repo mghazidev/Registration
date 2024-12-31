@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { RadioButton } from "../radio/TRadioButton";
+import { RadioButton } from "./TRadioButton";
 
 interface RadioCardProps {
   id: string;
