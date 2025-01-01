@@ -10,7 +10,7 @@ const TInputField = React.forwardRef<
   }
 >(({ className, type, error, errorMessage, ...props }, ref) => {
   return (
-    <div className="space-y-1">
+    <div>
       <input
         type={type}
         className={cn(
@@ -25,8 +25,8 @@ const TInputField = React.forwardRef<
       />
       {error && errorMessage && (
         <div className="flex items-center gap-2">
-          <WarningIcon className="h-5 w-5 text-red-800" />
-          <p className="text-red-800 body-3-regular">{errorMessage}</p>
+          <WarningIcon className="h-7 w-7 text-red-800" />
+          <p className="text-red-800 body-3-regular mt-2">{errorMessage}</p>
         </div>
       )}
     </div>

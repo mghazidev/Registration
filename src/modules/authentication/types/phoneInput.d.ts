@@ -3,6 +3,7 @@ export type CountryCode = {
   country: string;
   flag: string;
   spellingCode: string;
+  key: string;
 };
 
 export type PhoneInputValue = {

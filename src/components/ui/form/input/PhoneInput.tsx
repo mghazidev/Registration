@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from "react";
-import { useCountryCodes } from "@/modules/authentication/hooks/useCountryCodes";
+import React from "react";
 import { TInputField } from "@/components/ui/form/input/TInputField";
 import { PhoneInputValue } from "@/modules/authentication/types/phoneInput";
 import {
@@ -15,16 +14,17 @@ import { usePhoneInput } from "@/modules/authentication/hooks/usePhoneInput";
 type PhoneInputProps = {
   value: PhoneInputValue;
   onChange: (value: PhoneInputValue) => void;
+  error?: string;
 };
 
-const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange }) => {
+const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange, error }) => {
   const {
     countryCodes,
     selectedCountry,
     validationError,
     handleCountryChange,
     handlePhoneNumberChange,
-    error,
+    // error,
   } = usePhoneInput(value, onChange);
 
   return (
@@ -49,7 +49,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange }) => {
             </SelectTrigger>
             <SelectContent>
               {countryCodes.map((country, ind) => (
-                <SelectItem key={ind} value={country.code}>
+                <SelectItem key={country.key} value={country.code}>
                   <div className="flex items-center gap-2">
                     <img
                       src={country.flag}
@@ -73,20 +73,27 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange }) => {
           />
         </div>
       </div>
-
-      {validationError && (
+      {(validationError || error) && (
+        <div className="flex items-center gap-2">
+          <WarningIcon className="h-7 w-7 text-red-800" />
+          <p className="text-red-800 body-3-regular mt-2">
+            {validationError || error}
+          </p>
+        </div>
+      )}
+      {/* {validationError && (
         <div className="flex items-center gap-2">
           <WarningIcon className="h-7 w-7 text-red-800" />
           <p className="text-red-800 body-3-regular">{validationError}</p>
         </div>
-      )}
+      )} */}
 
-      {error && (
+      {/* {error && (
         <div className="flex items-center gap-2 ">
           <WarningIcon className="h-7 w-7 text-red-800" />
-          <p className="text-red-800 body-3-regular">{error}aasdasdasd</p>
+          <p className="text-red-800 body-3-regular">{error}</p>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

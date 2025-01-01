@@ -10,7 +10,7 @@ export const fetchCountryCodes = async (): Promise<CountryCode[]> => {
   return data
     .filter((country: any) => country.idd?.root && country.idd?.suffixes)
     .map((country: any, index: number) => ({
-      key: `${country.idd.root}${country.idd.suffixes[0]}-${index}`,
+      key: index,
       code: country.idd.root + (country.idd.suffixes[0] || ""),
       flag: country.flags.svg,
       spellingCode: country.cca2,

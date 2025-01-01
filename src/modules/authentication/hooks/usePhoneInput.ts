@@ -1,4 +1,3 @@
-// usePhoneInput.ts
 import { useState, useCallback, useEffect, useMemo } from "react";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { useCountryCodes } from "@/modules/authentication/hooks/useCountryCodes";
@@ -62,7 +61,7 @@ export const usePhoneInput = (
       if (newPhoneNumber === "") {
         setValidationError("");
       } else if (!validatePhoneNumber(newPhoneNumber, spellingCode)) {
-        setValidationError("Invalid phone number.");
+        setValidationError("Please enter a correct phone number format.");
       } else {
         setValidationError("");
       }
