@@ -13,5 +13,6 @@ export const fetchCountryCodes = async (): Promise<CountryCode[]> => {
       key: `${country.idd.root}${country.idd.suffixes[0]}-${index}`,
       code: country.idd.root + (country.idd.suffixes[0] || ""),
       flag: country.flags.svg,
+      spellingCode: country.cca2,
     }));
 };

@@ -10,7 +10,7 @@ import { PhoneInputValue } from "../types/phoneInput";
 const RegistrationForm = () => {
   const [isEmail, setIsEmail] = React.useState(true);
   const [mobileValue, setMobileValue] = React.useState<PhoneInputValue>({
-    countryCode: "+1",
+    countryCode: "+966",
     phoneNumber: "",
   });
 
