@@ -84,7 +84,7 @@ const RegistrationForm = () => {
                     placeholder="example@gmail.com"
                     error={fieldState.invalid}
                     errorMessage={fieldState.error?.message}
-                    value={field.value || ""} // Ensure that value is always defined
+                    value={field.value || ""}
                     onChange={field.onChange}
                     // {...field}
                   />
