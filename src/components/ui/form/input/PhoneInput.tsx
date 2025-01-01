@@ -67,7 +67,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange, error }) => {
           <TInputField
             type="tel"
             className="my-0"
-            value={value.phoneNumber}
+            value={value.phoneNumber || ""}
             onChange={handlePhoneNumberChange}
             error={validationError ? true : false}
           />
