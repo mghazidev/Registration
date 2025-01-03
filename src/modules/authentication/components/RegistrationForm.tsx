@@ -31,8 +31,6 @@ const RegistrationForm = () => {
     console.log("Submitted Data:", data);
   };
 
-  console.log("Current errors:", errors);
-
   return (
     <div className="flex flex-col items-center justify-center w-full gap-4">
       <div className="bg-primary-white py-10 w-[500px] m-auto p-10 shadow-custom rounded-xl">

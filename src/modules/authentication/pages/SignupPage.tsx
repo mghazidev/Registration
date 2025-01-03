@@ -1,10 +1,10 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 import RegistrationForm from "../components/RegistrationForm";
 const SignupPage = () => {
   return (
     <div className="min-h-screen flex flex-col ">
-      <NavBar />
+      <Header />
 
       <div className="flex-grow flex items-center justify-center bg-brand-100">
         <RegistrationForm />

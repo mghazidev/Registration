@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "@/svgs/Logo";
 
-const NavBar = () => {
+const Header = () => {
   return (
     <div className=" p-7 px-14 flex items-center justify-between bg-primary-white">
       <Logo />
@@ -10,4 +10,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Header;
