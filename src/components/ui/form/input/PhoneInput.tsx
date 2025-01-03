@@ -1,5 +1,5 @@
 import React from "react";
-import { TInputField } from "@/components/ui/form/input/TInputField";
+import { Input } from "@/components/ui/form/input/input";
 import { PhoneInputValue } from "@/modules/authentication/types/phoneInput";
 import {
   Select,
@@ -7,7 +7,7 @@ import {
   SelectContent,
   SelectItem,
   SelectValue,
-} from "@/components/ui/form/select/TSelect";
+} from "@/components/ui/form/select/select";
 import WarningIcon from "@/svgs/WarningIcon";
 import { usePhoneInput } from "@/modules/authentication/hooks/usePhoneInput";
 
@@ -64,7 +64,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ value, onChange, error }) => {
           </Select>
         </div>
         <div className="flex-2 basis-70 w-[70%]">
-          <TInputField
+          <Input
             type="tel"
             className="my-0"
             value={value.phoneNumber || ""}

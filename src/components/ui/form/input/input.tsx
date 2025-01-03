@@ -2,7 +2,7 @@ import * as React from "react";
 import WarningIcon from "@/svgs/WarningIcon";
 import { cn } from "@/lib/utils";
 
-const TInputField = React.forwardRef<
+const Input = React.forwardRef<
   HTMLInputElement,
   React.ComponentProps<"input"> & {
     error?: boolean;
@@ -32,6 +32,6 @@ const TInputField = React.forwardRef<
     </div>
   );
 });
-TInputField.displayName = "TInputField";
+Input.displayName = "Input";
 
-export { TInputField };
+export { Input };

@@ -1,12 +1,11 @@
-export default function RegistrationLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/modules/authentication/components/app-sidebar";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      <h1>Registration</h1>
-      <div>{children}</div>
-    </div>
+    <SidebarProvider>
+      <AppSidebar />
+      <main>{children}</main>
+    </SidebarProvider>
   );
 }

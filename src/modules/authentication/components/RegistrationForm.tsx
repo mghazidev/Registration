@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
-import { Button } from "@/components/ui/TButton";
-import { TInputField } from "@/components/ui/form/input/TInputField";
-import { Label } from "@/components/ui/TLabel";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/form/input/input";
+import { Label } from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
 import PhoneInput from "@/components/ui/form/input/PhoneInput";
 import { PhoneInputValue } from "../types/phoneInput";
@@ -76,7 +76,7 @@ const RegistrationForm = () => {
                 name="email"
                 control={control}
                 render={({ field, fieldState }) => (
-                  <TInputField
+                  <Input
                     id="email"
                     type="email"
                     placeholder="example@gmail.com"

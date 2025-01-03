@@ -1,5 +1,5 @@
 import * as React from "react";
-import { TInputField } from "./TInputField";
+import { TInputField } from "./input";
 import CheckIcon from "@/svgs/CheckIcon";
 import RefreshIcon from "@/svgs/RefreshIcon";
 import CrossCheckIcon from "@/svgs/CrossCheckIcon";
