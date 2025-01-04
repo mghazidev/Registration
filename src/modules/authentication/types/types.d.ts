@@ -15,7 +15,12 @@ export type SubStep = {
 export type Step = {
   id: string;
   name: string;
-  icon: any;
   route: string;
   subSteps?: SubStep[];
+};
+
+type SideBarStepItemProps = {
+  step: Step;
+  activeStepId: string;
+  completedStepIds: any;
 };

@@ -1,83 +1,117 @@
 import React from "react";
 import { Step } from "../types/types";
-import { StepIcon } from "@/svgs/StepIcon";
 import DiamondIcon from "@/svgs/DiamondIcon";
 import Link from "next/link";
+import { SideBarStepItemProps } from "../types/types";
+import { cn } from "@/lib/utils";
 
 export const steps: Step[] = [
   {
     id: "1",
     name: "Get started",
-    icon: <StepIcon stepId="1" activeStepId="1" stepNumber="1" />,
     route: "/registration/get-started",
     subSteps: [
       {
         id: "1-1",
         name: "Basic info",
         route: "/registration/get-started/basic-info",
-        icon: <DiamondIcon className="w-7 h-7 text-brand-50" />,
       },
       {
         id: "1-2",
         name: "Business revenue",
         route: "/registration/get-started/business-revenue",
-        icon: <DiamondIcon className="w-7 h-7 text-brand-50" />,
       },
     ],
   },
   {
     id: "2",
     name: "Add business details",
-    icon: <StepIcon stepId="2" activeStepId="2" stepNumber="2" />,
     route: "/registration/add-business-details",
   },
   {
     id: "3",
     name: "Add bank details",
-    icon: <StepIcon stepId="3" activeStepId="3" stepNumber="3" />,
     route: "/registration/add-bank-details",
   },
   {
     id: "4",
     name: "Add Extra",
-    icon: <StepIcon stepId="4" activeStepId="4" stepNumber="4" />,
     route: "/registration/add-extra",
   },
   {
     id: "5",
     name: "Payment plans & Review",
-    icon: <StepIcon stepId="5" activeStepId="5" stepNumber="5" />,
     route: "/registration/payment-plans-review",
   },
 ];
 
-type SideBarStepItemProps = {
-  step: Step;
-};
-const SideBarStepItem: React.FC<SideBarStepItemProps> = ({ step }) => {
+const SideBarStepItem: React.FC<SideBarStepItemProps> = ({
+  step,
+  activeStepId,
+  completedStepIds = [],
+}) => {
+  const isActive = step.id === activeStepId;
+  const isCompleted = completedStepIds.includes(step.id);
   return (
     <div>
       <Link href={step.route}>
-        <div className="flex items-center px-4 py-2 cursor-pointer ">
-          <div className="flex items-center w-7 h-7 mr-2">{step.icon}</div>
-          <div className="body-1-medium text-functional-100">{step.name}</div>
+        <div className="flex items-center px-4 py-4 cursor-pointer ">
+          <div
+            className={cn(
+              "flex items-center justify-center w-7 h-7 mr-4 rounded-max border border-brand-50",
+              isActive || isCompleted ? "bg-brand-50" : "bg-transparent"
+            )}
+          >
+            <span
+              className={cn(
+                "body-3-medium leading-none mt-0.5",
+
+                isActive || isCompleted ? "text-primary-white" : "text-brand-50"
+              )}
+            >
+              {step.id}
+            </span>
+          </div>
+          <span
+            className={cn(
+              "body-1-medium ",
+              isActive
+                ? "text-brand-50"
+                : isCompleted
+                ? "text-functional-100"
+                : "text-functional-700"
+            )}
+          >
+            {step.name}
+          </span>
         </div>
       </Link>
-
       {step.subSteps && step.subSteps.length > 0 && (
-        <div className=" mt-2">
-          {step.subSteps.map((subStep) => (
-            <Link key={subStep.id} href={subStep.route}>
-              <div className="flex items-center px-4 py-2 cursor-pointer ">
-                <div className="flex items-center w-7 h-7 mr-2">
-                  {subStep.icon}
+        <div>
+          {step.subSteps.map((subStep) => {
+            const isSubStepActive = subStep.route === activeStepId;
+            const isSubStepCompleted = completedStepIds.includes(subStep.id);
+
+            return (
+              <Link key={subStep.id} href={subStep.route}>
+                <div className="flex items-center px-4 py-3 cursor-pointer">
+                  <DiamondIcon className="w-7 h-7 text-brand-50 mr-7" />
+                  <span
+                    className={cn(
+                      "body-1-medium",
+                      isSubStepActive
+                        ? "text-brand-50"
+                        : isSubStepCompleted
+                        ? "text-functional-100"
+                        : "text-functional-700"
+                    )}
+                  >
+                    {subStep.name}
+                  </span>
                 </div>
-                <div className="body-1-medium text-functional-100">
-                  {subStep.name}
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>
