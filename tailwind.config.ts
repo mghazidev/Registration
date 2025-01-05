@@ -8,6 +8,7 @@ export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/ui/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/modules/authentication/**/*.{js,ts,jsx,tsx,mdx}",
@@ -389,6 +390,7 @@ export default {
         ],
       },
       fontWeight: {
+        thin: "400",
         medium: "500",
         bold: "700",
         extraBold: "800",

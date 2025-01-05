@@ -33,8 +33,8 @@ const RegistrationForm = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full gap-4">
-      <div className="bg-primary-white py-10 w-[500px] m-auto p-10 shadow-custom rounded-xl">
-        <h1 className="label-1-regular ">Sign up or login using</h1>
+      <div className="bg-primary-white py-10 w-full md:w-[500px] m-auto p-6 md:p-10 shadow-none md:shadow-custom rounded-xl">
+        <h1 className="label-1-regular">Sign up or login using</h1>
         <div className="bg-brand-100 flex my-6 items-center rounded-3xl w-full p-2 ">
           <Button
             variant="secondary"

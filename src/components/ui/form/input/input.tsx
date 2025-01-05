@@ -14,10 +14,8 @@ const Input = React.forwardRef<
       <input
         type={type}
         className={cn(
-          "flex w-[100%] my-4 font-customFustat bg-primary-white body-1-medium h-11 rounded-m border px-5 py-6 text-functional-100 shadow-sm transition-colors placeholder:text-functional-500 focus-visible:border-none focus-visible:outline-none focus-visible:ring-2  disabled:cursor-not-allowed disabled:opacity-50 ",
-          error
-            ? "border-red-800 focus-visible:ring-red-800"
-            : "border-functional-500 focus-visible:ring-brand-50",
+          "flex w-[100%] my-4 font-customFustat bg-primary-white body-1-medium h-11 rounded-m border px-5 py-6 text-functional-100 shadow-sm transition-colors placeholder:text-functional-500 focus-visible:border-2 focus-visible:border-brand-50 focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 ",
+          error ? "border-2 border-red-800" : "border-functional-500 ",
           className
         )}
         ref={ref}

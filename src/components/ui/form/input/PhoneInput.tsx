@@ -7,7 +7,7 @@ import {
   SelectContent,
   SelectItem,
   SelectValue,
-} from "@/components/ui/form/select/select";
+} from "@/components/ui/select";
 import WarningIcon from "@/svgs/WarningIcon";
 import { usePhoneInput } from "@/modules/authentication/hooks/usePhoneInput";
 

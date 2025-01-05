@@ -6,7 +6,7 @@ const SignupPage = () => {
     <div className="min-h-screen flex flex-col ">
       <Header />
 
-      <div className="flex-grow flex items-center justify-center bg-brand-100">
+      <div className="flex-grow flex items-start md:items-center justify-center bg-primary-white md:bg-brand-100">
         <RegistrationForm />
       </div>
     </div>
