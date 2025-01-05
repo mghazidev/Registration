@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/form/input/input";
-import { Button } from "@/components/ui/button";
 
 const countries = [
   {
@@ -63,23 +62,6 @@ const BasicInfoPage = () => {
       <div>
         <Label htmlFor="email">Email address</Label>
         <Input id="email" type="email" placeholder="example@gmail.com" />
-      </div>
-      <div className="flex items-center gap-6 my-8">
-        <Button
-          variant="outline"
-          className="bg-primary-white w-[40%] text-functional-100 body-2-medium font-bold"
-          size="lg"
-        >
-          Back
-        </Button>
-        <Button
-          variant="secondary"
-          className="bg-brand-50 text-primary-white body-2-medium font-bold"
-          size="lg"
-          type="submit"
-        >
-          Continue
-        </Button>
       </div>
     </div>
   );
