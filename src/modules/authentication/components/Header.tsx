@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <div
       className={cn(
-        "p-7 p-7 md:px-14 flex items-center bg-primary-white",
+        "p-7 p-7 md:px-14 px-0 flex items-center bg-primary-white",
         show ? " justify-between" : "md:justify-end justify-between"
       )}
     >
