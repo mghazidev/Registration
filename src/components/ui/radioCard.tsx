@@ -40,7 +40,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
         <p
           className={cn(
             "body-1-medium ml-3",
-            checked ? "text-functional-100" : "text-functional-500",
+            checked ? "text-functional-100" : "text-functional-700",
             error && "text-red-800"
           )}
         >

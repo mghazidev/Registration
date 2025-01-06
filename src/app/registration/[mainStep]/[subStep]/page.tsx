@@ -2,11 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import React from "react";
-import BasicInfoPage from "@/modules/authentication/pages/BasicInfoPage";
+import BasicInfoForm from "@/modules/authentication/pages/BasicInfoForm";
+import BusinessRevenueForm from "@/modules/authentication/pages/BusinessRevenueForm";
 
 const SubStepForms: Record<string, React.FC> = {
-  "basic-info": () => <BasicInfoPage />,
-  "business-revenue": () => <div>Business Revenue Form</div>,
+  "basic-info": () => <BasicInfoForm />,
+  "business-revenue": () => <BusinessRevenueForm />,
 };
 
 export default function SubStepPage() {
@@ -17,7 +18,7 @@ export default function SubStepPage() {
   const SubFormComponent = SubStepForms[subStep as string];
 
   if (!SubFormComponent) {
-    return <div>404: Sub Step Not Found</div>;
+    return <div>404</div>;
   }
 
   return <SubFormComponent />;

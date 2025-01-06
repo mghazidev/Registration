@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/form/input/input";
+import FormHead from "../components/FormHead";
 
 const countries = [
   {
@@ -25,13 +26,13 @@ const countries = [
     name: "Qatar",
   },
 ];
-const BasicInfoPage = () => {
+const BasicInfoForm = () => {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="label-1-medium text-[32px]">Get started with Tamara</h1>
-      <p className="label-2-medium font-thin text-functional-500 my-4">
-        Please fill in your details so we can set up your account.
-      </p>
+      <FormHead
+        heading="Get started with Tamara"
+        description="Please fill in your details so we can set up your account."
+      />
 
       <div className="mb-4">
         <Select>
@@ -67,4 +68,4 @@ const BasicInfoPage = () => {
   );
 };
 
-export default BasicInfoPage;
+export default BasicInfoForm;

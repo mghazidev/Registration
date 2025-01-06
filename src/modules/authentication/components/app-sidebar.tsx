@@ -18,7 +18,7 @@ export function AppSidebar() {
           Application ID: #527891
         </p>
       </SidebarHeader>
-      <SidebarContent className="px-9">
+      <SidebarContent className="md:px-9 px-7">
         {steps.map((step) => (
           <SideBarStepItem
             key={step.id}
