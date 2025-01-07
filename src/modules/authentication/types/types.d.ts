@@ -1,4 +1,5 @@
 import { PhoneInputValue } from "./phoneInput";
+import { basicInfoSchema, businessRevenueSchema } from "../formValidation";
 
 export type FormProps = {
   email?: string;
@@ -24,3 +25,7 @@ type SideBarStepItemProps = {
   activeStepId: string;
   completedStepIds: any;
 };
+
+export type BasicInfoFormValues = z.inder<typeof basicInfoSchema.BasicInfo>;
+
+export type BusinessRevenueFormValues = z.infer<typeof businessRevenueSchema>;

@@ -48,24 +48,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <div className="lg:w-[440px] w-full lg:p-0 p-6 lg:ml-22 ml-0 w-full md:min-h-0 min-h-full">
           {children}
-
-          <div className="flex items-center gap-6 md:my-8 my-0 md:relative fixed bottom-0 left-0 w-full bg-primary-white md:p-0 p-6 pb-10 md:border-none border-t border-functional-500">
-            <Button
-              variant="outline"
-              className="bg-primary-white  w-[40%] text-functional-100 body-2-medium font-bold"
-              size="lg"
-            >
-              Back
-            </Button>
-            <Button
-              variant="secondary"
-              className="bg-brand-50 text-primary-white body-2-medium font-bold"
-              size="lg"
-              type="submit"
-            >
-              Continue
-            </Button>
-          </div>
         </div>
 
         <div className="fixed bottom-6   right-6 flex justify-end w-[130px] md:block hidden">

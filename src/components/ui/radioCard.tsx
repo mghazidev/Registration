@@ -22,6 +22,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
   checked,
   disabled = false,
   onChange,
+  ...props
 }) => {
   return (
     <div
@@ -35,6 +36,7 @@ const RadioCard: React.FC<RadioCardProps> = ({
         disabled && "cursor-not-allowed opacity-50"
       )}
       onClick={() => !disabled && onChange(value)}
+      {...props}
     >
       <div>
         <p

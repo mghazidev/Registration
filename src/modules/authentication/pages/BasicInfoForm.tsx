@@ -11,6 +11,10 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/form/input/input";
 import FormHead from "../components/FormHead";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { basicInfoSchema } from "../formValidation";
+import { BasicInfoFormValues } from "../types/types";
+import { useForm } from "react-hook-form";
 
 const countries = [
   {
@@ -26,16 +30,37 @@ const countries = [
     name: "Qatar",
   },
 ];
-const BasicInfoForm = () => {
+const BasicInfoForm: React.FC<{ onSubmitRef: React.RefObject<() => void> }> = ({
+  onSubmitRef,
+}) => {
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<BasicInfoFormValues>({
+    resolver: zodResolver(basicInfoSchema),
+  });
+
+  const onSubmit = (data: BasicInfoFormValues) => {
+    console.log(data);
+  };
+
+  React.useEffect(() => {
+    if (onSubmitRef) {
+      onSubmitRef.current = handleSubmit(onSubmit);
+    }
+  }, [onSubmitRef, handleSubmit]);
+
   return (
-    <div className="flex flex-col gap-4">
+    <form className="flex flex-col gap-4">
       <FormHead
         heading="Get started with Tamara"
         description="Please fill in your details so we can set up your account."
       />
 
       <div className="mb-4">
-        <Select>
+        <Select onValueChange={(value) => setValue("country", value)}>
           <SelectGroup>
             <SelectLabel>Country of registration</SelectLabel>
           </SelectGroup>
@@ -58,13 +83,18 @@ const BasicInfoForm = () => {
       </div>
       <div>
         <Label htmlFor="brand">Brand Name</Label>
-        <Input id={"brand"} type="text" placeholder="tamara" />
+        <Input id={"brand"} placeholder="tamara" {...register("brand")} />
       </div>
       <div>
         <Label htmlFor="email">Email address</Label>
-        <Input id="email" type="email" placeholder="example@gmail.com" />
+        <Input
+          id="email"
+          type="email"
+          placeholder="example@gmail.com"
+          {...register("email")}
+        />
       </div>
-    </div>
+    </form>
   );
 };
 
