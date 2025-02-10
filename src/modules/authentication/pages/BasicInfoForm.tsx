@@ -80,11 +80,11 @@ const BasicInfoForm: React.FC<{ onSubmitRef: React.RefObject<() => void> }> = ({
                   <SelectValue placeholder="Choose a country" />
                 </SelectTrigger>
               </TooltipTrigger>
-              <TooltipContent id="country" side="right">
+              <TooltipContent className="ml-4" id="country" side="right">
                 Reference site about lorem Ipsum, giving information on its
                 origins, as well as a random Lipsum generator. <br></br>
                 <p className="mt-2">
-                  What is business number?{" "}
+                  What is Country?{" "}
                   <span className="text-brand-50">Learn more</span>
                 </p>
               </TooltipContent>
@@ -104,16 +104,39 @@ const BasicInfoForm: React.FC<{ onSubmitRef: React.RefObject<() => void> }> = ({
         </div>
         <div>
           <Label htmlFor="brand">Brand Name</Label>
-          <Input id={"brand"} placeholder="tamara" {...register("brand")} />
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Input id={"brand"} placeholder="tamara" {...register("brand")} />
+            </TooltipTrigger>
+            <TooltipContent className="ml-4" id="brand" side="right">
+              Reference site about lorem Ipsum, giving information on its
+              origins, as well as a random Lipsum generator. <br></br>
+              <p className="mt-2">
+                What is Brand name?{" "}
+                <span className="text-brand-50">Learn more</span>
+              </p>
+            </TooltipContent>
+          </Tooltip>
         </div>
         <div>
           <Label htmlFor="email">Email address</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="example@gmail.com"
-            {...register("email")}
-          />
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Input
+                id="email"
+                type="email"
+                placeholder="example@gmail.com"
+                {...register("email")}
+              />
+            </TooltipTrigger>
+            <TooltipContent className="ml-4" id="brand" side="right">
+              Reference site about lorem Ipsum, giving information on its
+              origins, as well as a random Lipsum generator. <br></br>
+              <p className="mt-2">
+                What is Email? <span className="text-brand-50">Learn more</span>
+              </p>
+            </TooltipContent>
+          </Tooltip>
         </div>
       </form>
     </TooltipProvider>

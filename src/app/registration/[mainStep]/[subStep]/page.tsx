@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import BasicInfoForm from "@/modules/authentication/pages/BasicInfoForm";
 import BusinessRevenueForm from "@/modules/authentication/pages/BusinessRevenueForm";
+import PersonalDetailsForm from "@/modules/authentication/pages/PersonalDetailsForm";
 import { Button } from "@/components/ui/button";
 
 const SubStepForms: Record<
@@ -15,6 +16,9 @@ const SubStepForms: Record<
   ),
   "business-revenue": ({ onSubmitRef }) => (
     <BusinessRevenueForm onSubmitRef={onSubmitRef} />
+  ),
+  "personal-details": ({ onSubmitRef }) => (
+    <PersonalDetailsForm onSubmitRef={onSubmitRef} />
   ),
 };
 

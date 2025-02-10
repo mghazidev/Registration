@@ -10,14 +10,17 @@ const StepsConfig: Record<
     subSteps: ["basic-info", "business-revenue"],
     hasMainForm: false,
   },
-  "add-business-details": { hasMainForm: true },
+  "add-business-details": {
+    subSteps: ["personal-details"],
+    hasMainForm: false,
+  },
   "add-bank-details": { hasMainForm: true },
   "add-extra": { hasMainForm: true },
   "payment-plans-review": { hasMainForm: true },
 };
 
 const MainStepForms: Record<string, React.FC> = {
-  "add-business-details": () => <div>Add Business Details Form</div>,
+  // "add-business-details": () => <div>Add Business Details Form</div>,
   "add-bank-details": () => <div>Add Bank Details Form</div>,
   "add-extra": () => <div>Add Extra Details Form</div>,
   "payment-plans-review": () => <div>Payment Plans Review Form</div>,
