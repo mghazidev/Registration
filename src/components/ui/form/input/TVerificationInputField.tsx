@@ -1,5 +1,5 @@
 import * as React from "react";
-import { TInputField } from "./input";
+import { Input } from "./input";
 import CheckIcon from "@/svgs/CheckIcon";
 import RefreshIcon from "@/svgs/RefreshIcon";
 import CrossCheckIcon from "@/svgs/CrossCheckIcon";
@@ -57,7 +57,7 @@ const VerificationInputField: React.FC<VerificationInputFieldProps> = ({
   return (
     <div className="w-full space-y-4">
       <div className="relative ">
-        <TInputField
+        <Input
           id={id}
           error={error}
           errorMessage="Please enter a valid phone number."
