@@ -22,6 +22,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { personalDetailsSchema } from "../formValidation";
+import { PersonalDetailsFormValues } from "../types/types";
+import useDateFormatter from "../hooks/useDateFormatter";
 
 const countries = [
   {
@@ -46,16 +49,20 @@ const PersonalDetailsForm: React.FC<{
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm<any>({
-    // resolver: zodResolver(),
+  } = useForm<PersonalDetailsFormValues>({
+    resolver: zodResolver(personalDetailsSchema),
+    defaultValues: {
+      isSignatory: "no",
+    },
   });
-  const [isSignatory, setIsSignatory] = React.useState<string>("");
+  const { date, setDate, formatDate } = useDateFormatter();
+  const [isSignatory, setIsSignatory] = React.useState<string>("no");
   const [nationalId, setNationalId] = React.useState("");
   const [verificationStatus, setVerificationStatus] = React.useState<
     "verified" | "not_verified" | "loading" | "idle"
   >("idle");
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: PersonalDetailsFormValues) => {
     console.log(data);
   };
 
@@ -77,6 +84,11 @@ const PersonalDetailsForm: React.FC<{
     }, 2000);
   };
 
+  const handleExpiryDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedDate = formatDate(e.target.value);
+    setValue("expiryDate", formattedDate, { shouldValidate: true });
+  };
+
   return (
     <TooltipProvider>
       <form className="flex flex-col gap-4">
@@ -90,36 +102,75 @@ const PersonalDetailsForm: React.FC<{
           <div className="flex gap-6">
             <RadioButton
               id="signatory-yes"
-              name="signatory"
               label="Yes"
               value="yes"
               checked={isSignatory === "yes"}
-              onChange={(e) => setIsSignatory(e.target.value)}
+              {...register("isSignatory")}
+              onChange={(e) => {
+                setIsSignatory(e.target.value);
+                setValue("isSignatory", e.target.value, {
+                  shouldValidate: true,
+                });
+              }}
             />
             <RadioButton
               id="signatory-no"
-              name="signatory"
               label="No"
               value="no"
               checked={isSignatory === "no"}
-              onChange={(e) => setIsSignatory(e.target.value)}
+              {...register("isSignatory")}
+              onChange={(e) => {
+                setIsSignatory(e.target.value);
+                setValue("isSignatory", e.target.value, {
+                  shouldValidate: true,
+                });
+              }}
             />
           </div>
-          <Label htmlFor="national-id">National ID</Label>
+          {errors.isSignatory && (
+            <p className="text-red-500">{errors.isSignatory.message}</p>
+          )}
+
+          <Label htmlFor="nationalId">National ID</Label>
           <VerificationInputField
-            id="national-id"
+            id="nationalId"
             placeholder="Enter national id"
             value={nationalId}
-            onChange={setNationalId}
+            onChange={(value) => {
+              setNationalId(value);
+              setValue("nationalId", value);
+            }}
             verificationStatus={verificationStatus}
             onVerifyClick={handleVerifyPhoneNumber}
           />
+          {errors.nationalId && (
+            <p className="text-red-500">{errors.nationalId.message}</p>
+          )}
 
-          <Label htmlFor="legal-signatory-name">Legal signatory name</Label>
-          <Input id="legal-signatory-name" placeholder="Tama LTD" />
+          <Label htmlFor="legalSignatoryName">Legal signatory name</Label>
+          <Input
+            id="legalSignatoryName"
+            placeholder="Tama LTD"
+            {...register("legalSignatoryName")}
+          />
 
-          <Label htmlFor="expiry-date">Expiry date</Label>
-          <Input id="expiry-date" placeholder="1/1/2025" />
+          {errors.legalSignatoryName && (
+            <p className="text-red-500">{errors.legalSignatoryName.message}</p>
+          )}
+
+          <Label htmlFor="expiryDate">Expiry date</Label>
+          <Input
+            id="expiryDate"
+            placeholder="MM/DD/YYYY"
+            maxLength={10}
+            {...register("expiryDate", {
+              onChange: (e) => handleExpiryDateChange(e),
+            })}
+            value={date}
+          />
+          {errors.expiryDate && (
+            <p className="text-red-500">{errors.expiryDate.message}</p>
+          )}
 
           <Select onValueChange={(value) => setValue("country", value)}>
             <SelectGroup>
@@ -155,6 +206,9 @@ const PersonalDetailsForm: React.FC<{
               ))}
             </SelectContent>
           </Select>
+          {errors.country && (
+            <p className="text-red-500">{errors.country.message}</p>
+          )}
         </div>
       </form>
     </TooltipProvider>
