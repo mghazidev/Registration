@@ -6,6 +6,17 @@ import BasicInfoForm from "@/modules/authentication/pages/BasicInfoForm";
 import BusinessRevenueForm from "@/modules/authentication/pages/BusinessRevenueForm";
 import PersonalDetailsForm from "@/modules/authentication/pages/PersonalDetailsForm";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const SubStepForms: Record<
   string,
@@ -38,6 +49,23 @@ export default function SubStepPage() {
 
   return (
     <>
+      <AlertDialog>
+        <AlertDialogTrigger>Open</AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction>Continue</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
       <SubFormComponent onSubmitRef={onSubmitRef} />
       <div className="flex items-center gap-6 md:my-8 my-0 md:relative fixed bottom-0 left-0 w-full bg-primary-white md:p-0 p-6 pb-10 md:border-none border-t border-functional-500">
         <Button

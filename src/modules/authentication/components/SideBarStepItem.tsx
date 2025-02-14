@@ -27,6 +27,23 @@ export const steps: Step[] = [
     id: "2",
     name: "Add business details",
     route: "/registration/add-business-details",
+    subSteps: [
+      {
+        id: "2-1",
+        name: "Business Verification",
+        route: "/registration/add-business-details/business-verification",
+      },
+      {
+        id: "2-2",
+        name: "Perosnal Details",
+        route: "/registration/add-business-details/personal-details",
+      },
+      {
+        id: "2-3",
+        name: "Business Details",
+        route: "/registration/add-business-details/business-details",
+      },
+    ],
   },
   {
     id: "3",
