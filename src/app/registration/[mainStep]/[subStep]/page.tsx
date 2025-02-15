@@ -6,6 +6,7 @@ import BasicInfoForm from "@/modules/authentication/pages/BasicInfoForm";
 import BusinessRevenueForm from "@/modules/authentication/pages/BusinessRevenueForm";
 import PersonalDetailsForm from "@/modules/authentication/pages/PersonalDetailsForm";
 import { Button } from "@/components/ui/button";
+import CrossCheckIcon from "@/svgs/CrossCheckIcon";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -52,17 +53,15 @@ export default function SubStepPage() {
       <AlertDialog>
         <AlertDialogTrigger>Open</AlertDialogTrigger>
         <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </AlertDialogDescription>
+          <AlertDialogHeader className="flex justify-end">
+            <CrossCheckIcon className="w-9 h-9 text-primary-black cursor-pointer" />
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
-          </AlertDialogFooter>
+          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </AlertDialogDescription>
+          <AlertDialogFooter></AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
