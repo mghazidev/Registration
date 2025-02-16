@@ -382,7 +382,7 @@ export default {
           },
         ],
         "display-3": [
-          "36px",
+          "32px",
           {
             lineHeight: "40px",
             letterSpacing: "1%",
@@ -587,7 +587,7 @@ export default {
           fontSize: fontSize["display-3"][0],
           lineHeight: fontSize["display-3"][1].lineHeight,
           letterSpacing: fontSize["display-3"][1].letterSpacing,
-          fontWeight: fontWeight.bold,
+          fontWeight: fontWeight.semibold,
         },
       });
     }),

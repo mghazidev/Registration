@@ -7,6 +7,7 @@ import BusinessRevenueForm from "@/modules/authentication/pages/BusinessRevenueF
 import PersonalDetailsForm from "@/modules/authentication/pages/PersonalDetailsForm";
 import { Button } from "@/components/ui/button";
 import CrossCheckIcon from "@/svgs/CrossCheckIcon";
+import OptCode from "@/modules/authentication/components/otp-code";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -34,6 +35,25 @@ const SubStepForms: Record<
   ),
 };
 
+const verificationSteps = [
+  {
+    id: 1,
+    step: "Download  or sign in to the Nafath app",
+  },
+  {
+    id: 2,
+    step: "Tap 'Accept' when you receive the request",
+  },
+  {
+    id: 3,
+    step: "Select the number 23 in the Nafath app",
+  },
+  {
+    id: 4,
+    step: "Return to this page for completion",
+  },
+];
+
 export default function SubStepPage() {
   const pathname = usePathname();
   const router = useRouter();
@@ -52,16 +72,23 @@ export default function SubStepPage() {
     <>
       <AlertDialog>
         <AlertDialogTrigger>Open</AlertDialogTrigger>
-        <AlertDialogContent>
+        <AlertDialogContent className="h-[90vh]">
           <AlertDialogHeader className="flex justify-end">
             <CrossCheckIcon className="w-9 h-9 text-primary-black cursor-pointer" />
           </AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+          <AlertDialogDescription className="">
+            <AlertDialogTitle>Complete your ID Verification</AlertDialogTitle>
+            <OptCode />
+            <div>
+              <h2>How to verify with nafaath?</h2>
+              {verificationSteps?.map((step, ind) => (
+                <p key={ind}>{step.step}</p>
+              ))}
+            </div>
           </AlertDialogDescription>
-          <AlertDialogFooter></AlertDialogFooter>
+          <AlertDialogFooter>
+            <Button>Open Nafath App</Button>
+          </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
